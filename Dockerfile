@@ -9,9 +9,10 @@ LABEL \
 ENV SHELL=/bin/bash
 
 RUN \
+  rpm --rebuilddb && yum clean all && \
+  yum install -y epel-release && \
+  yum install -y libaio libbsd wget && \
   yum install -y wget && \
-  wget http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/ && \
-  rpm -Uvh epel-release*rpm && \
   yum install -y stress-ng && \
   yum install -y gcc && \
   wget http://www.cs.virginia.edu/stream/FTP/Code/stream.c && \
