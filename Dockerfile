@@ -9,6 +9,7 @@ LABEL \
 ENV SHELL=/bin/bash
 
 RUN \
+  yum install -y wget && \
   wget http://download-ib01.fedoraproject.org/pub/epel/7/x86_64/ && \
   rpm -Uvh epel-release*rpm && \
   yum install -y stress-ng && \
