@@ -20,5 +20,3 @@ RUN \
   gcc -O /tmp/stream.c -o stream && mv /tmp/stream /usr/bin/ && \
   rm -f /tmp/stream.c && \
   yum clean all
-
-ENTRYPOINT ["/usr/bin/stress-ng"]
